@@ -1,0 +1,3 @@
+[submodule "niosiie/extlibs/googletest"]
+	path = niosiie/extlibs/googletest
+	url = https://github.com/google/googletest

@@ -1,0 +1,137 @@
+
+set_global_assignment -name TOP_LEVEL_ENTITY top
+
+# Quartus Version
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION 20.3.0
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "12:06:38  NOVEMBER 02, 2020"
+set_global_assignment -name LAST_QUARTUS_VERSION "20.3.0 Pro Edition"
+
+# Device and Family
+set_global_assignment -name DEVICE 10AS016C3U19E2SG
+set_global_assignment -name FAMILY "Arria 10"
+
+# Settings
+set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
+set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
+set_global_assignment -name MAX_CORE_JUNCTION_TEMP 100
+set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 2
+
+# Source files
+set_global_assignment -name SYSTEMVERILOG_FILE top.sv
+set_global_assignment -name SYSTEMVERILOG_FILE src/common/altsqrt_avmm_bridge.sv 
+set_global_assignment -name SDC_FILE top.sdc
+
+# QSYS and IP files
+set_global_assignment -name QSYS_FILE src/top_sys/top_sys.qsys
+set_global_assignment -name IP_FILE src/top_sys/ip/top_sys/top_sys_clock_in.ip
+set_global_assignment -name IP_FILE src/top_sys/ip/top_sys/top_sys_reset_in.ip
+set_global_assignment -name IP_FILE src/top_sys/ip/top_sys/u_nios.ip
+set_global_assignment -name IP_FILE src/top_sys/ip/top_sys/u_nios_cfg_ram.ip
+set_global_assignment -name IP_FILE src/top_sys/ip/top_sys/top_sys_altsqrt_0.ip
+set_global_assignment -name IP_FILE src/top_sys/ip/top_sys/u_ram.ip
+set_global_assignment -name IP_FILE src/top_sys/ip/top_sys/u_gpo.ip
+set_global_assignment -name IP_FILE src/top_sys/ip/top_sys/u_gpi.ip
+
+# Pin assignments
+set_location_assignment PIN_W15 -to sys_clk_main_fpga
+set_location_assignment PIN_H1 -to sys_reset
+
+set_location_assignment PIN_Y16 -to u_gpi_data_proc_request
+set_location_assignment PIN_K1 -to u_gpi_clear_nios_state
+set_location_assignment PIN_J2 -to u_gpi_ping_request
+set_location_assignment PIN_G1 -to u_gpi_clear_ping_response
+
+set_location_assignment PIN_D14 -to u_gpo_nios_busy
+set_location_assignment PIN_F17 -to u_gpo_nios_done
+set_location_assignment PIN_H12 -to u_gpo_nios_error
+set_location_assignment PIN_F16 -to u_gpo_ping_response
+
+set_location_assignment PIN_Y15 -to u_ram_clk2
+set_location_assignment PIN_AA13 -to u_ram_s2_clken
+set_location_assignment PIN_R19 -to u_ram_s2_byteenable[3]
+set_location_assignment PIN_G18 -to u_ram_s2_byteenable[2]
+set_location_assignment PIN_U18 -to u_ram_s2_byteenable[1]
+set_location_assignment PIN_P17 -to u_ram_s2_byteenable[0]
+set_location_assignment PIN_T14 -to u_ram_reset2_reset
+set_location_assignment PIN_W10 -to u_ram_reset2_reset_req
+set_location_assignment PIN_V13 -to u_ram_s2_chipselect
+set_location_assignment PIN_V18 -to u_ram_s2_write
+
+set_location_assignment PIN_T16 -to u_ram_s2_address[9]
+set_location_assignment PIN_W12 -to u_ram_s2_address[8]
+set_location_assignment PIN_Y12 -to u_ram_s2_address[7]
+set_location_assignment PIN_U15 -to u_ram_s2_address[6]
+set_location_assignment PIN_AA14 -to u_ram_s2_address[5]
+set_location_assignment PIN_U19 -to u_ram_s2_address[4]
+set_location_assignment PIN_T19 -to u_ram_s2_address[3]
+set_location_assignment PIN_Y10 -to u_ram_s2_address[2]
+set_location_assignment PIN_AB14 -to u_ram_s2_address[1]
+set_location_assignment PIN_R18 -to u_ram_s2_address[0]
+
+set_location_assignment PIN_F13 -to u_ram_s2_readdata[31]
+set_location_assignment PIN_G15 -to u_ram_s2_readdata[30]
+set_location_assignment PIN_L17 -to u_ram_s2_readdata[29]
+set_location_assignment PIN_G13 -to u_ram_s2_readdata[28]
+set_location_assignment PIN_E18 -to u_ram_s2_readdata[27]
+set_location_assignment PIN_A13 -to u_ram_s2_readdata[26]
+set_location_assignment PIN_M17 -to u_ram_s2_readdata[25]
+set_location_assignment PIN_G16 -to u_ram_s2_readdata[24]
+set_location_assignment PIN_F18 -to u_ram_s2_readdata[23]
+set_location_assignment PIN_G19 -to u_ram_s2_readdata[22]
+set_location_assignment PIN_G14 -to u_ram_s2_readdata[21]
+set_location_assignment PIN_A15 -to u_ram_s2_readdata[20]
+set_location_assignment PIN_H17 -to u_ram_s2_readdata[19]
+set_location_assignment PIN_F19 -to u_ram_s2_readdata[18]
+set_location_assignment PIN_E17 -to u_ram_s2_readdata[17]
+set_location_assignment PIN_E16 -to u_ram_s2_readdata[16]
+set_location_assignment PIN_D13 -to u_ram_s2_readdata[15]
+set_location_assignment PIN_H13 -to u_ram_s2_readdata[14]
+set_location_assignment PIN_B13 -to u_ram_s2_readdata[13]
+set_location_assignment PIN_A12 -to u_ram_s2_readdata[12]
+set_location_assignment PIN_B16 -to u_ram_s2_readdata[11]
+set_location_assignment PIN_A16 -to u_ram_s2_readdata[10]
+set_location_assignment PIN_C16 -to u_ram_s2_readdata[9]
+set_location_assignment PIN_D19 -to u_ram_s2_readdata[8]
+set_location_assignment PIN_A17 -to u_ram_s2_readdata[7]
+set_location_assignment PIN_C19 -to u_ram_s2_readdata[6]
+set_location_assignment PIN_C17 -to u_ram_s2_readdata[5]
+set_location_assignment PIN_C18 -to u_ram_s2_readdata[4]
+set_location_assignment PIN_F14 -to u_ram_s2_readdata[3]
+set_location_assignment PIN_E15 -to u_ram_s2_readdata[2]
+set_location_assignment PIN_H16 -to u_ram_s2_readdata[1]
+set_location_assignment PIN_B14 -to u_ram_s2_readdata[0]
+
+set_location_assignment PIN_W17 -to u_ram_s2_writedata[31]
+set_location_assignment PIN_Y17 -to u_ram_s2_writedata[30]
+set_location_assignment PIN_V17 -to u_ram_s2_writedata[29]
+set_location_assignment PIN_V16 -to u_ram_s2_writedata[28]
+set_location_assignment PIN_AB16 -to u_ram_s2_writedata[27]
+set_location_assignment PIN_V15 -to u_ram_s2_writedata[26]
+set_location_assignment PIN_AA17 -to u_ram_s2_writedata[25]
+set_location_assignment PIN_AA16 -to u_ram_s2_writedata[24]
+set_location_assignment PIN_Y11 -to u_ram_s2_writedata[23]
+set_location_assignment PIN_V12 -to u_ram_s2_writedata[22]
+set_location_assignment PIN_AB13 -to u_ram_s2_writedata[21]
+set_location_assignment PIN_T17 -to u_ram_s2_writedata[20]
+set_location_assignment PIN_T18 -to u_ram_s2_writedata[19]
+set_location_assignment PIN_R17 -to u_ram_s2_writedata[18]
+set_location_assignment PIN_C13 -to u_ram_s2_writedata[17]
+set_location_assignment PIN_D15 -to u_ram_s2_writedata[16]
+set_location_assignment PIN_H15 -to u_ram_s2_writedata[15]
+set_location_assignment PIN_C12 -to u_ram_s2_writedata[14]
+set_location_assignment PIN_E14 -to u_ram_s2_writedata[13]
+set_location_assignment PIN_AB10 -to u_ram_s2_writedata[12]
+set_location_assignment PIN_AB11 -to u_ram_s2_writedata[11]
+set_location_assignment PIN_AB15 -to u_ram_s2_writedata[10]
+set_location_assignment PIN_N17 -to u_ram_s2_writedata[9]
+set_location_assignment PIN_U14 -to u_ram_s2_writedata[8]
+set_location_assignment PIN_V19 -to u_ram_s2_writedata[7]
+set_location_assignment PIN_AA11 -to u_ram_s2_writedata[6]
+set_location_assignment PIN_U16 -to u_ram_s2_writedata[5]
+set_location_assignment PIN_AA12 -to u_ram_s2_writedata[4]
+set_location_assignment PIN_U13 -to u_ram_s2_writedata[3]
+set_location_assignment PIN_Y14 -to u_ram_s2_writedata[2]
+set_location_assignment PIN_W13 -to u_ram_s2_writedata[1]
+set_location_assignment PIN_W14 -to u_ram_s2_writedata[0]
+
+
