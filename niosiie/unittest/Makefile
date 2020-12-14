@@ -295,7 +295,7 @@ run-coverage-exes : init-coverage
 test-coverage : run-coverage-exes
 	lcov --directory $(LCOV_ROOT_DIR) --capture --output-file $(LCOV_OUTPUT_FILE)
 # Exclude coverage on gtest libs and standard libs
-	lcov -r $(LCOV_OUTPUT_FILE) '*google_gtest*' '*/boost/*' '*/usr/*' '*/gcc/*' '*test/*' -o $(LCOV_OUTPUT_FILE)
+	lcov -r $(LCOV_OUTPUT_FILE) '*googletest*' '*/boost/*' '*/usr/*' '*/gcc/*' '*/unittest/*' -o $(LCOV_OUTPUT_FILE)
 	genhtml --ignore-errors source --highlight --legend $(LCOV_OUTPUT_FILE) -o $(LCOV_REPORT_DIR)
 	@echo "[SUCCESS] Generated a coverage report: $(LCOV_REPORT_DIR)"
 	@echo "[SUCCESS] Use your favourite browser to view the report." 
