@@ -20,9 +20,9 @@ Run the appropriate git command to populate the submodule directory [extlibs/goo
 See Requirements section for more details on these third-party libraries. 
 
 #### Unit Test Build Option
-The unit test build is designed to support many different compilation options. There are options to compile with gcc or clang and with a variety of sanitizers, such as address and undefined behavior sanitizers. See [Makefile](Makefile) for more details about these configurations.
+The unit test build is designed to support many different compilation options. There are options to compile with gcc or clang and with a variety of sanitizers, such as address and undefined behavior sanitizers. See [unittest/Makefile](unittest/Makefile) for more details about these configurations.
 
-These are the `Make` options, under [unittest/](unittest/).
+The followings are the `Make` options, under [unittest/](unittest/).
 
 This command builds the default googletest executable and runs it. 
 ``` bash
@@ -34,14 +34,14 @@ This command builds all variants of the googletest executables and runs them all
 $ make test-all
 ```
 #### Unit Test Build Option - Code Coverage
-The command builds the non-optimized googletest executable for collecting gcov coverage data. After compilation, it runs `lcov` to analyze the coverage data and `genhtml` to create a report in HTML format.  
+This command builds the non-optimized googletest executable for collecting gcov coverage data. After compilation, it runs `lcov` to analyze the coverage data and `genhtml` to create a report in HTML format.  
 ``` bash
 $ make test-coverage
 ```
 
 ## Requirements
 ### Quartus Prime software
-Quartus Prime Pro Edition software is required to compile the Arria 10 FPGA design. 
+Intel Quartus Prime Pro Edition software is required to compile the Arria 10 FPGA design. 
 
 ### Third-party library
 #### Googletest
